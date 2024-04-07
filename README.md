@@ -3,7 +3,8 @@
 This gem aims to add some exporters to [sprockets][rails/sprockets].
 
 Currently, it has:
-- a Brotli exporter, which can be used with [ngx_brotli][google/ngx_brotli].
+- a Brotli exporter, which can be used with [ngx_brotli][google/ngx_brotli] and Caddy's [file_server.precompressed] subdirective.
+- a Zstd exporter, which can be used with [zstd-nginx-module][tokers/zstd-nginx-module] and Caddy's [file_server.precompressed] subdirective.
 
 ## Installation
 
@@ -30,7 +31,10 @@ With Rails, in `application.rb`:
 
 ```ruby
 config.assets.configure do |env|
+  # Brotli
   env.register_exporter %w(text/css application/javascript image/svg+xml), Sprockets::ExportersPack::BrotliExporter
+  # Zstd
+  env.register_exporter %w(text/css application/javascript image/svg+xml), Sprockets::ExportersPack::ZstdExporter
 end
 ```
 
@@ -38,7 +42,10 @@ Without Rails:
 
 ```ruby
 env = Sprockets::Environment.new
+# Brotli
 env.register_exporter %w(text/css application/javascript image/svg+xml), Sprockets::ExportersPack::BrotliExporter
+# Zstd
+env.register_exporter %w(text/css application/javascript image/svg+xml), Sprockets::ExportersPack::ZstdExporter
 ```
 
 ## Contributing
@@ -52,3 +59,5 @@ The gem is available as open source under the terms of the [MIT License](http://
 [rails/sprockets]: https://github.com/rails/sprockets
 [rails/rails]: https://github.com/rails/rails
 [google/ngx_brotli]: https://github.com/google/ngx_brotli
+[tokers/zstd-nginx-module]: https://github.com/tokers/zstd-nginx-module
+[file_server.precompressed]: https://caddyserver.com/docs/caddyfile/directives/file_server#precompressed
