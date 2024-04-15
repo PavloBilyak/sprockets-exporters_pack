@@ -20,7 +20,7 @@ module Sprockets
 
       def call
         data = File.binread(target)
-        zstd = Zstd.compress(data, self.class.quality)
+        zstd = Zstd.compress(data, level: self.class.quality)
 
         write(@zstd_target) do |file|
           file.write(zstd)
