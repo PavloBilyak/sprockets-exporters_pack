@@ -20,6 +20,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '>= 10.0'
 
   spec.add_dependency 'brotli', '>= 0.2.0'
-  spec.add_dependency 'zstd-ruby', '~> 1.5'
+  spec.add_dependency 'zstd-ruby', '~> 2.0'
   spec.add_dependency 'sprockets', '>= 4.0.0.beta3'
 end
