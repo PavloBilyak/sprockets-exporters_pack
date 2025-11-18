@@ -4,13 +4,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'sprockets/exporters_pack/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'sprockets-exporters_pack'
+  spec.name          = 'sprockets-exporters_zstd'
   spec.version       = Sprockets::ExportersPack::VERSION
   spec.authors       = ['Hans Otto Wirtz']
   spec.email         = ['hansottowirtz@gmail.com']
 
-  spec.summary       = 'Adds multiple exporters to Sprockets'
-  spec.homepage      = 'https://github.com/hansottowirtz/sprockets-exporters_pack'
+  spec.summary       = 'Adds zstd exporter to Sprockets'
+  spec.homepage      = 'https://github.com/PavloBilyak/sprockets-exporters_pack'
   spec.license       = 'MIT'
 
   spec.files         = Dir['README.md', 'LICENSE', 'lib/**/*.rb']

@@ -11,7 +11,7 @@ Currently, it has:
 Add this line to your `Gemfile`:
 
 ```ruby
-gem 'sprockets-exporters_pack'
+gem 'sprockets-exporters_zstd'
 ```
 
 You probably need these too, as sprockets hasn't been updated yet:
