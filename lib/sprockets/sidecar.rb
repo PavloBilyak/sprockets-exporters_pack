@@ -1,10 +1,10 @@
-require 'sprockets/exporters_pack/version'
-require 'sprockets/exporters_pack/brotli_exporter'
-require 'sprockets/exporters_pack/zstd_exporter'
+require 'sprockets/sidecar/version'
+require 'sprockets/sidecar/brotli_exporter'
+require 'sprockets/sidecar/zstd_exporter'
 require 'sprockets/manifest'
 
 module Sprockets
-  module ExportersPack
+  module Sidecar
     module ManifestCleanup
       def remove(filename)
         result = super
@@ -16,4 +16,4 @@ module Sprockets
   end
 end
 
-Sprockets::Manifest.prepend(Sprockets::ExportersPack::ManifestCleanup)
+Sprockets::Manifest.prepend(Sprockets::Sidecar::ManifestCleanup)

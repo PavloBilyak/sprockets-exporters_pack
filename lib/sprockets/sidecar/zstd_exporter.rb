@@ -2,7 +2,7 @@ require 'sprockets/exporters/base'
 require 'zstd-ruby'
 
 module Sprockets
-  module ExportersPack
+  module Sidecar
     class ZstdExporter < ::Sprockets::Exporters::Base
       def setup
         @zstd_target = "#{ target }.zst"

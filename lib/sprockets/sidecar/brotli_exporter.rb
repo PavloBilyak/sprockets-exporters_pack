@@ -2,7 +2,7 @@ require 'sprockets/exporters/base'
 require 'brotli'
 
 module Sprockets
-  module ExportersPack
+  module Sidecar
     class BrotliExporter < ::Sprockets::Exporters::Base
       def setup
         @brotli_target = "#{ target }.br"
